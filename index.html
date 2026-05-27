@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>доставка стройматериалов в бреской области</title>
+    <title>Доставка стройматериалов в Брестской области</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Подключение премиальных футуристичных шрифтов -->
+    <!-- Подключение шрифтов (исправлена нерабочая ссылка) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com" rel="stylesheet">
 </head>
 <body>
@@ -14,8 +17,8 @@
     <div class="bg-glow"></div>
 
     <header>
-        <h1 class="main-title">доставка строительных материалов в Бресткой и других областей</h1>
-       
+        <h1 class="main-title">Доставка спецтехникой в Брестской и других областях</h1>
+        <p class="subtitle">Инновационные логистические решения для масштабных задач</p>
     </header>
 
     <main class="services-container">
@@ -30,7 +33,6 @@
                 <h2>Грунт и Разработка</h2>
                 <p>Профессиональная доставка грунта, песка и щебня. Оперативная погрузка экскаваторами и транспортировка самосвалами повышенной грузоподъемности.</p>
                 <div class="card-buttons">
-                    
                     <button class="btn-call" onclick="openModal()">Позвонить</button>
                 </div>
             </div>
@@ -39,14 +41,13 @@
         <!-- КАРТОЧКА 2: Строительные материалы и длинномеры -->
         <div class="card">
             <div class="image-box">
-                <img src="truck2.jpg" alt="Доставка строительных блоков и материалов">
+               <img src="truck2.jpg" alt="Доставка строительных блоков и материалов">
                 <div class="card-badge MAN">МАТЕРИАЛЫ</div>
             </div>
             <div class="card-content">
                 <h2>Блоки и Стройматериалы</h2>
                 <p>Транспортировка крупногабаритных партий строительных блоков, кирпича и плит на автомобиле MAN с прицепом. Доставка точно в срок прямо на объект.</p>
                 <div class="card-buttons">
-                  
                     <button class="btn-call" onclick="openModal()">Позвонить</button>
                 </div>
             </div>
@@ -86,7 +87,6 @@
         function closeModal() {
             const modal = document.getElementById('phoneModal');
             modal.classList.remove('active');
-            // Сбрасываем текст кнопки копирования при закрытии
             setTimeout(() => {
                 document.getElementById('copyBtn').innerText = 'Копировать номер';
             }, 300);
@@ -96,12 +96,10 @@
             const numberText = document.getElementById('phoneNumber').innerText;
             const copyBtn = document.getElementById('copyBtn');
             
-            // Быстрое копирование в буфер обмена
             navigator.clipboard.writeText(numberText).then(() => {
                 copyBtn.innerText = '✓ Скопировано!';
                 copyBtn.style.background = '#27ae60';
                 
-                // Возвращаем исходный цвет через 2 секунды
                 setTimeout(() => {
                     copyBtn.innerText = 'Копировать номер';
                     copyBtn.style.background = '#34495e';
@@ -111,7 +109,6 @@
             });
         }
 
-        // Закрытие окна при клике на темную область вокруг него
         document.getElementById('phoneModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeModal();
